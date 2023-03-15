@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formWrapper {
+}
+
+.form {
+  width: 440px;
+
+  padding: 20px;
+  background-color: var(--color-white);
+}
+
+.actions a {
+  display: block;
+  margin-top: 8px;
+}

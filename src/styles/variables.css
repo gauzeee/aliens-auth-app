@@ -1,0 +1,16 @@
+:root {
+  /*Colors*/
+  --color-red: oklch(0.626 0.1709 23.423);
+  --color-green: oklch(89.72% 0.134 127.65);
+  --color-darkgreen: oklch(71.2% 0.134 127.65);
+  --text-color: oklch(0.1776 0 0);
+  --bg-color: oklch(98.5% 0.014 127.65);
+  --color-gray: oklch(47.3% 0 139.59);
+  --color-white: oklch(100% 100% 0);
+  --color-green--hover: oklch(89.72% 0.134 127.65 / 0.8);
+
+  /*Breakpoints*/
+  --max-width: 1440px;
+  --tabler: 980px;
+  --mobile: 630px;
+}
