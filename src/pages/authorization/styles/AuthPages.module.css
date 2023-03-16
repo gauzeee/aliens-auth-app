@@ -45,6 +45,11 @@
   text-decoration: none;
 }
 
+.actionLink:focus {
+  outline: 1px solid var(--text-color);
+  border-radius: 4px;
+}
+
 .actionLink:visited {
   contain: var(--text-color);
 }
