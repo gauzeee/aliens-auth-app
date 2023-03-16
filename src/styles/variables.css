@@ -5,12 +5,25 @@
   --color-darkgreen: oklch(71.2% 0.134 127.65);
   --text-color: oklch(0.1776 0 0);
   --bg-color: oklch(98.5% 0.014 127.65);
+  --bg-color-white-opacity: oklch(100% 100% 0 / 0.6);
+  --bg-color-black-opacity: oklch(0 0 0 / 0.5);
+  --bg-color-gray: oklch(95% 0 333.37);
   --color-gray: oklch(47.3% 0 139.59);
   --color-white: oklch(100% 100% 0);
   --color-green--hover: oklch(89.72% 0.134 127.65 / 0.8);
+  --color-violet: oklch(54.54% 0.183 286.82);
+  --color-violet--hover: oklch(61.1% 0.183 286.82);
 
   /*Breakpoints*/
   --max-width: 1440px;
-  --tabler: 980px;
+  --tablet: 980px;
   --mobile: 630px;
+
+  /*Special*/
+  --cosmo-gradient: linear-gradient(
+    335deg,
+    oklch(51.93% 0.238 298.41) 16%,
+    oklch(60.8% 0.119 253.65) 46%,
+    oklch(57.97% 0.2 333.37) 90%
+  );
 }

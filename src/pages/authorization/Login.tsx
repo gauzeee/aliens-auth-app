@@ -1,26 +1,39 @@
 import React from "react";
 import { Form, NavLink, useNavigation } from "react-router-dom";
-import { Input } from "@/components";
+import { Button, Input } from "@/components";
 
 import styles from "./styles/AuthPages.module.css";
 
 const Login = () => {
   const { state } = useNavigation();
+  const loading = state === "submitting";
   return (
     <section className={styles.container}>
       <div className={styles.formWrapper}>
-        <h1>Welcome, Alien</h1>
         <Form className={styles.form} method="post">
-          <Input name="email" label="Email" required />
-          <Input name="password" type="password" label="Password" required />
-          <button type="submit">
-            {state === "submitting" ? "Loading" : "Login"}
-          </button>
+          <h1 className={styles.formTitle}>Welcome, Alien</h1>
+          <Input name="email" label="Email" required disabled={loading} />
+          <Input
+            name="password"
+            type="password"
+            label="Password"
+            required
+            disabled={loading}
+          />
+          <Button
+            ariaLabel="Login form submit button"
+            className={styles.formSubmitButton}
+            type="submit"
+            isLoading={loading}
+            disabled={loading}
+          >
+            Login
+          </Button>
+          <div className={styles.actions}>
+            <NavLink className={styles.actionLink} to="../signup">Not registered yet? Signup!</NavLink>
+            <NavLink className={styles.actionLink} to="../forgot">Forgot password?</NavLink>
+          </div>
         </Form>
-        <div className={styles.actions}>
-          <NavLink to="../signup">Not registered yet? Signup!</NavLink>
-          <NavLink to="../forgot">Forgot password?</NavLink>
-        </div>
       </div>
     </section>
   );

@@ -11,10 +11,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--bg-color);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+#root {
+  background: url("./images/planet-top-right.png") top right / contain no-repeat,
+    var(--cosmo-gradient);
+}
+
+@media screen and (max-width:980px) {
+  #root {
+      /*background: url("./images/planet-top-right.png") top right / cover no-repeat,*/
+      /*var(--cosmo-gradient);*/
+
+      background-size: cover;
+  }
 }

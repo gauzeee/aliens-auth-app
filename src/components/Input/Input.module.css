@@ -1,7 +1,7 @@
 .input {
   display: block;
   all: unset;
-  height: 40px;
+  height: 50px;
   width: 100%;
   border: 2px solid var(--color-darkgreen);
   border-radius: 8px;
@@ -11,6 +11,7 @@
   position: relative;
   z-index: 1;
   box-sizing: border-box;
+  text-align: left;
 }
 
 .inputWrapper::after {
@@ -51,13 +52,14 @@
   font-size: 14px;
   color: var(--color-gray);
   background-color: var(--color-white);
-  padding: 0 2px;
+  padding: 1px 3px;
   transition: transform 0.3s, color 0.3s, font-size 0.3s;
   cursor: text;
   pointer-events: none;
   z-index: 1;
   left: 10px;
   top: 50%;
+  border-radius: 4px;
 }
 
 .input:focus {
@@ -67,9 +69,18 @@
 
 .input:focus ~ .inputLabel,
 .input:not([value=""]) ~ .inputLabel {
-  transform: translate(0px, -28px);
+  transform: translate(0px, -30px);
   font-size: 12px;
   color: var(--text-color);
+}
+
+.input:disabled {
+  filter: grayscale(0.8);
+  background-color: var(--bg-color-gray);
+}
+
+.input:disabled ~ .inputLabel {
+  background-color: var(--bg-color-gray);
 }
 
 .inputWrapper {
@@ -93,7 +104,7 @@
 .passwordButton {
   all: unset;
   position: absolute;
-  right: 8px;
+  right: 12px;
   height: 25px;
   width: 25px;
   top: 50%;

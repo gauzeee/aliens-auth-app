@@ -8,16 +8,20 @@
   justify-content: center;
 }
 
-.layout {
-}
-
 .layout ~ header .layoutContent,
 .layout ~ footer .layoutContent {
   min-height: calc(100vh - 120px);
 }
 
-@media screen and (max-width: var(--max-width)) {
+@media screen and (max-width: 1440px) {
   .layoutContent {
     max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .layoutContent {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
