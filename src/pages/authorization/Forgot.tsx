@@ -1,37 +1,38 @@
-import React from 'react';
-import { Form, NavLink, useNavigation } from "react-router-dom";
-import { Button, Input } from "@/components";
+import React from "react";
+import { ActionLink, Form, FormFields } from "@/features";
 
 import styles from "./styles/AuthPages.module.css";
 
-
-const Forgot = () => {
-  const { state } = useNavigation();
-  const loading = state === "submitting";
-  return (
-    <section className={styles.container}>
-      <div className={styles.formWrapper}>
-        <Form className={styles.form} method="post">
-          <h1 className={styles.formTitle}>Forgot your password?</h1>
-          <Input name="email" label="Email" required disabled={loading} />
-          <Button
-            ariaLabel="Forgot password form submit button"
-            className={styles.formSubmitButton}
-            type="submit"
-            isLoading={loading}
-            disabled={loading}
-          >
-            Help me to remember
-          </Button>
-          <div className={styles.actions}>
-            <NavLink className={styles.actionLink} to="../signup">Not registered yet? Signup!</NavLink>
-            <NavLink className={styles.actionLink} to="../login">Remembered password? Login!</NavLink>
-          </div>
-        </Form>
-      </div>
-    </section>
-  );
+const forgotFormFields: FormFields = {
+  email: {
+    label: "Email",
+    required: true,
+    type: "input",
+  },
 };
 
+const forgotFormLinks: ActionLink[] = [
+  {
+    to: "../signup",
+    text: "Not registered yet? Signup!",
+  },
+  {
+    to: "../login",
+    text: "Did you remember the password? Login!",
+  },
+];
+
+const Forgot = () => (
+  <section className={styles.container}>
+    <div className={styles.formWrapper}>
+      <Form
+        fields={forgotFormFields}
+        actionLinks={forgotFormLinks}
+        title="Forgot your password?"
+        submitButtonText="Help me to remember"
+      />
+    </div>
+  </section>
+);
 
 export default Forgot;

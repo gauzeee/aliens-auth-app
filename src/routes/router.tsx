@@ -1,9 +1,6 @@
 import { lazy } from "react";
-import {
-  createBrowserRouter,
-  Navigate,
-  redirect,
-} from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
+import { formActionBase } from "@/utils";
 import { PublicRoute } from "./PublicRoute";
 import { PrivateRoute } from "./PrivateRoute";
 import NotFound from "../pages/NotFound";
@@ -37,45 +34,18 @@ export const router = createBrowserRouter(
         },
         {
           path: "login",
-          action: async ({ request }) => {
-            const formData = await request.formData();
-            console.log(formData);
-            const updates = Object.fromEntries(formData);
-            const errors = {
-              email: "",
-              password: ""
-            };
-
-            Object.keys(updates).forEach((field) => {
-              const value = updates[field];
-              if(field === 'email') {
-                if (typeof value !== "string" || !value.includes("@")) {
-                  errors.email =
-                    "That doesn't look like an email address";
-                }
-              }
-              if(field === 'password') {
-                if (typeof value !== "string" || value.length < 6) {
-                  errors.password = "Password must be > 6 characters";
-                }
-              }
-            });
-
-            // return data if we have errors
-            if (Object.keys(errors).length) {
-              return errors;
-            }
-            return redirect("/auth/login");
-          },
+          action: formActionBase({ redirectPath: "/auth/login" }),
           element: <Login />,
         },
         {
           path: "signup",
           element: <Signup />,
+          action: formActionBase({ redirectPath: "/auth/signup" }),
         },
         {
           path: "forgot",
           element: <Forgot />,
+          action: formActionBase({ redirectPath: "/auth/forgot" }),
         },
       ],
     },
