@@ -3,11 +3,13 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "homepage": "https://gauzeee.github.io/aliens-auth-app/",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -b gh-pages",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "deploy": "npm run build && git add dist -f && git commit -m 'added dist' && git subtree push --force --prefix dist origin gh-pages"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -20,6 +22,7 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react-swc": "^3.0.0",
+    "gh-pages": "^5.0.0",
     "postcss": "^8.4.21",
     "postcss-preset-env": "^8.0.1",
     "prettier": "^2.8.4",
