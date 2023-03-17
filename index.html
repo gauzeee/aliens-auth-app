@@ -16,12 +16,7 @@
       #loader {
         position: absolute;
         inset: 0 0 0 0;
-        background: linear-gradient(
-          335deg,
-          rgba(127, 48, 219, 1) 16%,
-          rgba(76, 133, 200, 1) 46%,
-          rgba(187, 62, 171, 1) 90%
-        );
+        background-color: #eafdfd;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -86,6 +81,24 @@
       </div>
     </div>
     <div id="root"></div>
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
     <script>
       window.addEventListener("load", function () {
         const loader = document.getElementById("loader");
