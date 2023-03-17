@@ -1,7 +1,6 @@
 import { lazy } from "react";
 import {
   createBrowserRouter,
-  Link,
   Navigate,
   redirect,
 } from "react-router-dom";
@@ -42,7 +41,30 @@ export const router = createBrowserRouter(
             const formData = await request.formData();
             console.log(formData);
             const updates = Object.fromEntries(formData);
-            console.log(updates);
+            const errors = {
+              email: "",
+              password: ""
+            };
+
+            Object.keys(updates).forEach((field) => {
+              const value = updates[field];
+              if(field === 'email') {
+                if (typeof value !== "string" || !value.includes("@")) {
+                  errors.email =
+                    "That doesn't look like an email address";
+                }
+              }
+              if(field === 'password') {
+                if (typeof value !== "string" || value.length < 6) {
+                  errors.password = "Password must be > 6 characters";
+                }
+              }
+            });
+
+            // return data if we have errors
+            if (Object.keys(errors).length) {
+              return errors;
+            }
             return redirect("/auth/login");
           },
           element: <Login />,

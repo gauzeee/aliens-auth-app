@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 
 import styles from "./Input.module.css";
 
@@ -71,6 +71,11 @@ export const Input = (props: InputPropsTypes) => {
       <label className={styles.inputLabel} htmlFor={name}>
         {label || placeholder}
       </label>
+      {required && (
+        <span title={`${name} is required`} className={styles.inputRequired}>
+          *
+        </span>
+      )}
       {isPasswordInput && (
         <button
           aria-label="Show-Hide password button"
