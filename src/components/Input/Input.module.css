@@ -5,7 +5,7 @@
   width: 100%;
   border: 2px solid var(--color-darkgreen);
   border-radius: 8px;
-  padding-left: 8px;
+  padding: 0 8px;
   background-color: var(--color-white);
   transition: border-right-color 0.3s;
   position: relative;
@@ -64,7 +64,7 @@
 
 .input:focus {
   border-color: var(--color-green);
-  outline: 1px solid var(--text-color);
+  box-shadow: 0 0 0 1px var(--text-color);
 }
 
 .input:focus ~ .inputLabel,
@@ -120,7 +120,7 @@
 .passwordButton:hover,
 .passwordButton:focus {
   background-color: var(--color-green--hover);
-  outline: 1px solid var(--text-color);
+  box-shadow: 0 0 0 1px var(--text-color);
 }
 
 .hidePassword {
