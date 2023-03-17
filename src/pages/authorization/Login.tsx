@@ -11,7 +11,7 @@ const Login = () => {
     <section className={styles.container}>
       <div className={styles.formWrapper}>
         <Form className={styles.form} method="post">
-          <h1 className={styles.formTitle}>Welcome, Alien</h1>
+          <h1 className={styles.formTitle}>Welcome, Alien!</h1>
           <Input name="email" label="Email" required disabled={loading} />
           <Input
             name="password"
