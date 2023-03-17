@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/aliens-auth-app/favicon/alien.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alien Registration App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      #loader {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(
+          335deg,
+          rgba(127, 48, 219, 1) 16%,
+          rgba(76, 133, 200, 1) 46%,
+          rgba(187, 62, 171, 1) 90%
+        );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.3s;
+      }
+      .hide {
+        opacity: 0;
+      }
+      .lds-ripple {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .lds-ripple div {
+        position: absolute;
+        border: 4px solid #fff;
+        opacity: 1;
+        border-radius: 50%;
+        animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      }
+      .lds-ripple div:nth-child(2) {
+        animation-delay: -0.5s;
+      }
+      @keyframes lds-ripple {
+        0% {
+          top: 36px;
+          left: 36px;
+          width: 0;
+          height: 0;
+          opacity: 0;
+        }
+        4.9% {
+          top: 36px;
+          left: 36px;
+          width: 0;
+          height: 0;
+          opacity: 0;
+        }
+        5% {
+          top: 36px;
+          left: 36px;
+          width: 0;
+          height: 0;
+          opacity: 1;
+        }
+        100% {
+          top: 0;
+          left: 0;
+          width: 72px;
+          height: 72px;
+          opacity: 0;
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="/aliens-auth-app/assets/index-6ab34a51.js"></script>
+    <link rel="stylesheet" href="/aliens-auth-app/assets/index-52832b59.css">
+  </head>
+  <body>
+    <div id="loader">
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script>
+      window.addEventListener("load", function () {
+        const loader = document.getElementById("loader");
+        loader.classList.add("hide");
+        setTimeout(() => {
+          loader.remove();
+        }, 350);
+      });
+    </script>
+    
+  </body>
+</html>
