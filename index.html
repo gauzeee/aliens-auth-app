@@ -80,8 +80,8 @@
         }
       }
     </style>
-    <script type="module" crossorigin src="/aliens-auth-app/assets/index-c170008e.js"></script>
-    <link rel="stylesheet" href="/aliens-auth-app/assets/index-c38ab2a9.css">
+    <script type="module" crossorigin src="/aliens-auth-app/assets/index-baa50be9.js"></script>
+    <link rel="stylesheet" href="/aliens-auth-app/assets/index-4aa41612.css">
   </head>
   <body>
     <div id="loader">
@@ -119,5 +119,19 @@
       });
     </script>
     
+    <script defer>
+        let hasWebP = false;
+        (function() {
+            let img = new Image();
+            img.onload = function() {
+                hasWebP = !!(img.height > 0 && img.width > 0);
+                document.body.classList.add('webp-supports')
+            };
+            img.onerror = function() {
+                hasWebP = false;
+            };
+            img.src = 'http://www.gstatic.com/webp/gallery/1.webp';
+        })();
+    </script>
   </body>
 </html>
