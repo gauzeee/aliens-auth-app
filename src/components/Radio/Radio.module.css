@@ -1,0 +1,70 @@
+.fieldset {
+  border-radius: 8px;
+  border: 2px solid var(--color-darkgreen);
+  margin: 0 0 28px 0;
+  background-color: var(--color-white);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 0;
+  transition: border-color 0.3s;
+}
+
+.fieldset:disabled {
+  filter: grayscale(0.8);
+  background-color: var(--bg-color-gray);
+}
+
+.fieldset:focus-within {
+  border-color: var(--color-green);
+  box-shadow: 0 0 0 1px var(--text-color);
+}
+
+.fieldset::after {
+  z-index: -1;
+}
+
+.fieldset:focus-within::after {
+  transform: translate(-6px, -30px) rotate(-8deg);
+}
+
+.legend {
+  background-color: var(--color-white);
+  border-radius: 6px;
+  font-size: 12px;
+  padding: 1px 3px;
+  position: absolute;
+  left: 8px;
+  top: -8px;
+}
+
+.radioContainer {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px 2px;
+  border-radius: 6px;
+}
+
+.radioContainer:focus-within {
+  box-shadow: 0 0 0 1px var(--text-color);
+}
+
+.radio {
+  accent-color: var(--color-green);
+  margin-right: 6px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.radio:focus-visible {
+  outline: none;
+}
+
+.radioLabel {
+  color: var(--text-color);
+  font-size: 14px;
+  cursor: pointer;
+}

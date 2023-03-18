@@ -50,6 +50,26 @@
   }
 }
 
+.evilSection {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  padding: 10px 30px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.evilList {
+  text-align: left;
+}
+
+.evilMartianSection {
+  background-color: var(--color-darkgreen);
+}
+
+.evilMartianSection a {
+  color: var(--color-white);
+}
+
 @media all and (max-width: 500px) {
   .form {
     width: calc(100vw - 40px);

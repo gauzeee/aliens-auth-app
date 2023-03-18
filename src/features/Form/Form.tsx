@@ -5,7 +5,7 @@ import {
   useActionData,
   useNavigation,
 } from "react-router-dom";
-import { Button, Input } from "@/components";
+import { Button, Input, Radio } from "@/components";
 import { ActionLink, FormFields } from "./types";
 
 import styles from "./Form.module.css";
@@ -68,7 +68,15 @@ export const Form = (props: FormPropsTypes) => {
                   error={errors?.[name]}
                 />
               );
-
+            case "radio":
+              return field?.options ? (
+                <Radio
+                  required={field.required}
+                  label={field.label}
+                  name={name}
+                  options={field.options}
+                />
+              ) : null;
             default:
               return null;
           }

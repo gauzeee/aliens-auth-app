@@ -9,15 +9,24 @@ const signupFormFields: FormFields = {
     required: true,
     type: "input",
   },
+  email: {
+    label: "Email",
+    required: true,
+    type: "input",
+  },
   home_planet: {
     label: "What is your home planet?",
     required: true,
     type: "input",
   },
-  email: {
-    label: "Email",
+  is_evil: {
+    label: "Are you evil?",
+    type: "radio",
     required: true,
-    type: "input",
+    options: [
+      { value: "true", text: "Yes", id: "evil" },
+      { value: "false", text: "No", id: "not_evil" },
+    ],
   },
   password: {
     label: "Password",

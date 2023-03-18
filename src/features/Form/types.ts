@@ -1,10 +1,13 @@
-export type AvailableFields = "input" | "password";
+import { RadioOption } from "@/components/Radio/Radio";
+
+export type AvailableFields = "input" | "password" | "radio";
 
 export type FormField = {
   label: string;
   required?: boolean;
   type: AvailableFields;
   disabled?: boolean;
+  options?: RadioOption[];
 };
 
 export type ActionLink = {
