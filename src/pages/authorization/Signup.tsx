@@ -11,6 +11,7 @@ const signupFormFields: FormFields = {
   },
   home_planet: {
     label: "What is your home planet?",
+    required: true,
     type: "input",
   },
   email: {
@@ -44,7 +45,7 @@ const signupFromLinks: ActionLink[] = [
 const Signup = () => {
   return (
     <section className={styles.container}>
-      <div className={styles.formWrapper}>
+      <div className={styles.blockWrapper}>
         <Form
           fields={signupFormFields}
           actionLinks={signupFromLinks}

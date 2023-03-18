@@ -4,8 +4,21 @@
   align-items: center;
 }
 
-.formWrapper {
+.blockWrapper {
   border-radius: 8px;
   box-shadow: 0 0 12px 2px var(--bg-color-black-opacity);
   text-align: center;
+}
+
+.image {
+  width: 80%;
+  height: auto;
+}
+
+.planet {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--color-violet);
 }

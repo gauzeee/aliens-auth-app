@@ -29,7 +29,7 @@ const loginFormLinks: ActionLink[] = [
 
 const Login = () => (
   <section className={styles.container}>
-    <div className={styles.formWrapper}>
+    <div className={styles.blockWrapper}>
       <Form
         fields={loginFormFields}
         submitButtonText="Login"

@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Navigate, NavLink } from "react-router-dom";
 import { Button } from "@/components";
 
+import blockStyles from "./styles/AuthPages.module.css";
+import formStyles from "@/features/Form/Form.module.css";
+
 const Email = () => {
   const storedPass = localStorage.getItem("tempStoredPass");
   const pass = storedPass ? JSON.parse(storedPass) : undefined;
@@ -15,22 +18,27 @@ const Email = () => {
   return !pass ? (
     <Navigate to="/" />
   ) : (
-    <section>
-      <h1>Your password:</h1>
-      <div>
-        <span>{pass}</span>
-        <Button onClick={handleCopy}>
-          {copied ? "Copied" : "Copy to clipboard"}
-        </Button>
+    <section className={blockStyles.container}>
+      <div className={blockStyles.blockWrapper}>
+        <div className={formStyles.form}>
+          <h1 className={formStyles.formTitle}>Your password:</h1>
+          <p>{pass}</p>
+          <Button className={formStyles.formSubmitButton} onClick={handleCopy}>
+            {copied ? "Copied" : "Copy to clipboard"}
+          </Button>
+          <div className={formStyles.actions}>
+            <NavLink
+              className={formStyles.actionLink}
+              onClick={() => {
+                localStorage.removeItem("tempStoredPass");
+              }}
+              to="/auth/login"
+            >
+              Go to Login page
+            </NavLink>
+          </div>
+        </div>
       </div>
-      <NavLink
-        onClick={() => {
-          localStorage.removeItem("tempStoredPass");
-        }}
-        to="/auth/login"
-      >
-        Go to Login page
-      </NavLink>
     </section>
   );
 };

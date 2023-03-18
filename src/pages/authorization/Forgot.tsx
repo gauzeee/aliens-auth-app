@@ -24,7 +24,7 @@ const forgotFormLinks: ActionLink[] = [
 
 const Forgot = () => (
   <section className={styles.container}>
-    <div className={styles.formWrapper}>
+    <div className={styles.blockWrapper}>
       <Form
         fields={forgotFormFields}
         actionLinks={forgotFormLinks}

@@ -11,16 +11,20 @@ export const InnerLayout = ({ children }: { children?: React.ReactNode }) => {
     tokenService.remove();
     navigate("/auth/login");
   };
+  const userData = tokenService.get();
+
+
+
   return (
     <div className={styles.layout}>
-      <header>
-        Header <Button onClick={handleLogout}>Logout</Button>
+      <header className={styles.layoutHeader}>
+        <p>Hey, {userData.username}!</p>
+        <Button onClick={handleLogout}>Logout</Button>
       </header>
       <main className={styles.layoutContent}>
         <Outlet />
         {children}
       </main>
-      <footer>Footer</footer>
     </div>
   );
 };
