@@ -13,7 +13,7 @@ const apiMethods = {
       request.onsuccess = () => {
         delete data.password;
         resolve(data);
-        alert('Successfully signed up')
+        alert("Successfully signed up");
       };
 
       request.onerror = (event) => {
@@ -68,7 +68,7 @@ const apiMethods = {
           reject(`{"email": "User not found"}`);
           return;
         }
-        localStorage.setItem('tempStoredPass', JSON.stringify(result.password));
+        localStorage.setItem("tempStoredPass", JSON.stringify(result.password));
         resolve(result);
       };
 
@@ -78,7 +78,11 @@ const apiMethods = {
     }),
 };
 
-const db = await initDb();
+let db: IDBDatabase;
+
+(async () => {
+  db = await initDb();
+})();
 
 const fetch = async <T>(url: keyof typeof apiMethods, body: string) => {
   return apiMethods[url]<T>(body);
