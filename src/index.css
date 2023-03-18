@@ -18,11 +18,14 @@ body {
     var(--cosmo-gradient);
 }
 
-@media screen and (max-width:980px) {
-  #root {
-      /*background: url("./images/planet-top-right.png") top right / cover no-repeat,*/
-      /*var(--cosmo-gradient);*/
+.webp-supports #root {
+  background: url("./images/planet-top-right.webp") top right / contain
+      no-repeat,
+    var(--cosmo-gradient);
+}
 
-      background-size: cover;
+@media screen and (max-width: 980px) {
+  #root {
+    background-size: cover;
   }
 }

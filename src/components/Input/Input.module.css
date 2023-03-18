@@ -34,6 +34,10 @@
   transition: transform 0.3s;
 }
 
+[class="webp-supports"] .inputWrapper::after {
+  background-image: url("../../images/eyes.webp");
+}
+
 .inputWrapperPassword .input {
   padding-right: 40px;
 }
@@ -42,12 +46,20 @@
   background-image: url("../../images/closed-eyes.png");
 }
 
+[class="webp-supports"] .inputWrapperPasswordShown::after {
+  background-image: url("../../images/closed-eyes.webp");
+}
+
 .inputWrapper:focus-within::after {
   transform: translate(-6px, -28px) rotate(-8deg);
 }
 
 .inputWrapperInvalid::after {
   background-image: url("../../images/red-alien.png");
+}
+
+[class="webp-supports"] .inputWrapperInvalid::after {
+  background-image: url("../../images/red-alien.webp");
 }
 
 .inputWrapperInvalid:focus-within::after {
@@ -137,4 +149,12 @@
 
 .showPassword {
   background-image: url("../../images/pass-eye-closed.png");
+}
+
+[class="webp-supports"] .hidePassword {
+  background-image: url("../../images/pass-eye.webp");
+}
+
+[class="webp-supports"] .showPassword {
+  background-image: url("../../images/pass-eye-closed.webp");
 }

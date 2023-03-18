@@ -114,5 +114,19 @@
       });
     </script>
     <script type="module" src="/src/main.tsx"></script>
+    <script defer>
+        let hasWebP = false;
+        (function() {
+            let img = new Image();
+            img.onload = function() {
+                hasWebP = !!(img.height > 0 && img.width > 0);
+                document.body.classList.add('webp-supports')
+            };
+            img.onerror = function() {
+                hasWebP = false;
+            };
+            img.src = 'http://www.gstatic.com/webp/gallery/1.webp';
+        })();
+    </script>
   </body>
 </html>
