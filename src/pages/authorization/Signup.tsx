@@ -49,8 +49,8 @@ const Signup = () => {
         <Form
           fields={signupFormFields}
           actionLinks={signupFromLinks}
-          submitButtonText="Signup"
-          title="Who are you?"
+          submitButtonText="Register"
+          title="Tell about yourself"
         />
       </div>
     </section>

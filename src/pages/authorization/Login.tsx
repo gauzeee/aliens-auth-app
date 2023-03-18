@@ -19,7 +19,7 @@ const loginFormFields: FormFields = {
 const loginFormLinks: ActionLink[] = [
   {
     to: "../signup",
-    text: "Not registered yet? Signup!",
+    text: "First time on earth? Register",
   },
   {
     to: "../forgot",

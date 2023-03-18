@@ -1,0 +1,26 @@
+.header {
+  height: 60px;
+  width: 100%;
+  background-color: var(--bg-color-white-opacity);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 calc(100vw - 1440px);
+}
+
+.header > *:not(:last-child) {
+  margin-right: 20px;
+}
+
+@supports (backdrop-filter: blur(10px)) {
+  .header {
+    background-color: var(--bg-color-white-opacity);
+    backdrop-filter: blur(10px);
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .header {
+    padding: 0 20px;
+  }
+}

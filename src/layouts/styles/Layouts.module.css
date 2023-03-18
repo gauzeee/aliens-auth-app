@@ -8,29 +8,12 @@
   justify-content: center;
 }
 
-.layoutHeader ~ .layoutContent {
+.layoutContent {
   min-height: calc(100vh - 60px);
 }
 
-.layoutHeader {
-  height: 60px;
-  width: 100%;
-  background-color: var(--bg-color-white-opacity);
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 calc(100vw - 1440px);
-}
-
-.layoutHeader > *:not(:last-child) {
-  margin-right: 20px;
-}
-
-@supports (backdrop-filter: blur(10px)) {
-  .layoutHeader {
-    background-color: var(--bg-color-white-opacity);
-    backdrop-filter: blur(10px);
-  }
+header + .layoutContent {
+  min-height: calc(100vh - 120px);
 }
 
 @media screen and (max-width: 1440px) {
