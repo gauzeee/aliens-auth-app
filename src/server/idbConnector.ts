@@ -4,7 +4,6 @@ const initDb = () =>
       const openRequest = indexedDB.open("aliens");
 
       openRequest.onupgradeneeded = () => {
-        console.log("No database found - create");
         const db = openRequest.result;
         if (!db.objectStoreNames.contains("users")) {
           const users = db.createObjectStore("users", {
@@ -21,7 +20,6 @@ const initDb = () =>
       };
 
       openRequest.onsuccess = () => {
-        console.log("Database found - return");
         const db = openRequest.result;
         resolve(db);
       };
