@@ -21,6 +21,19 @@ const Home = () => {
             src={QRCode}
             alt="Registration QR code"
           />
+          <p>
+            or follow the{" "}
+            <a
+              aria-label="Registration information link"
+              className={styles.actionLink}
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              rel="nofollow"
+              target="_blank"
+              tabIndex={0}
+            >
+              link
+            </a>
+          </p>
         </div>
       </div>
     </section>
