@@ -1,12 +1,21 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 import styles from "./styles/Layouts.module.css";
+import { Button } from "@/components";
+import { tokenService } from "@/api";
 
 export const InnerLayout = ({ children }: { children?: React.ReactNode }) => {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    tokenService.remove();
+    navigate("/auth/login");
+  };
   return (
     <div className={styles.layout}>
-      <header>Header</header>
+      <header>
+        Header <Button onClick={handleLogout}>Logout</Button>
+      </header>
       <main className={styles.layoutContent}>
         <Outlet />
         {children}

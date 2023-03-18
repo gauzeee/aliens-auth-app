@@ -1,6 +1,5 @@
-export interface UserData {
+export interface User {
   email: string;
-  firstName: string;
-  lastName: string;
-  homePlanet: string;
+  username: string;
+  home_planet: string;
 }

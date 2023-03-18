@@ -1,4 +1,4 @@
-import { UserData } from "./types";
+import { User } from "@/api/types";
 
 enum STORAGE_KEYS {
   profileData = "profileData",
@@ -9,7 +9,7 @@ export const tokenService = {
     const dataString = localStorage.getItem(STORAGE_KEYS.profileData);
     return dataString ? JSON.parse(dataString) : undefined;
   },
-  set(userData: UserData) {
+  set(userData: User) {
     localStorage.setItem(STORAGE_KEYS.profileData, JSON.stringify(userData));
   },
   remove() {
