@@ -15,7 +15,7 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <p>Hey, {userData.username}!</p>
-      <Button onClick={handleLogout}>Logout</Button>
+      <Button ariaLabel="Logout" onClick={handleLogout}>Logout</Button>
     </header>
   );
 };

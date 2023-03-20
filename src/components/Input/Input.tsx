@@ -65,7 +65,7 @@ export const Input = (props: InputPropsTypes) => {
         name={name}
         tabIndex={tabIndex}
         type={visibleType}
-        aria-label={label}
+        aria-label={error ? `${name} input error: ${error}` : label}
         disabled={disabled}
       />
       <label className={styles.inputLabel} htmlFor={name}>
@@ -90,7 +90,14 @@ export const Input = (props: InputPropsTypes) => {
           }`}
         />
       )}
-      {!!error && <span className={styles.inputError}>{error}</span>}
+      {!!error && (
+        <span
+          aria-label={`${name} input error: ${error}`}
+          className={styles.inputError}
+        >
+          {error}
+        </span>
+      )}
     </div>
   );
 };
